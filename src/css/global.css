@@ -12,14 +12,16 @@ li {
 /**
  *整体布局
  */
-html,
-body {
-  font-size: 14px;
-  font-family: "microsoft yahei", tahoma, arial, Helvetica, sans-serif;
-}
-body {
+html {
   margin: 0;
   padding: 0;
+}
+html,
+body {
+  width: 100%;
+  font-size: 14px;
+  font-family: "microsoft yahei", tahoma, arial, Helvetica, sans-serif;
+  background: #010926;
 }
 .page-body {
   /* 页面首部
@@ -86,7 +88,6 @@ body {
 }
 .page-body .header_msg__right {
   flex: 1;
-  border: 1px solid red;
   position: relative;
 }
 .page-body .header_msg__right .zoom-btn {
@@ -95,6 +96,43 @@ body {
   height: 26px;
   margin-top: 16px;
   background-color: #fff;
+}
+.page-body .header_nav {
+  display: flex;
+  padding: 0 40px;
+}
+.page-body .header_nav__left {
+  flex: 1;
+}
+.page-body .header_nav__left li {
+  display: inline-block;
+}
+.page-body .header_nav__left li:nth-child(n+2) {
+  margin-left: 18px;
+}
+.page-body .header_nav__left li a {
+  color: #fff;
+}
+.page-body .header_nav__left li a:hover {
+  color: #4891be;
+}
+.page-body .header_nav__center {
+  width: 460px;
+}
+.page-body .header_nav__right {
+  flex: 1;
+}
+.page-body .header_nav__right li {
+  display: inline-block;
+}
+.page-body .header_nav__right li:nth-child(n+2) {
+  margin-left: 18px;
+}
+.page-body .header_nav__right li a {
+  color: #fff;
+}
+.page-body .header_nav__right li a:hover {
+  color: #4891be;
 }
 .page-body .content {
   padding: 0 40px;

@@ -15,22 +15,18 @@ li {
 /**
  *整体布局
  */
-
-html,
-body {
-    // width: 100%;
-    font-size: 14px;
-    font-family: "microsoft yahei", tahoma, arial, Helvetica, sans-serif;
-    //background: @bg-body;
-}
-body {
-    // overflow-x: hidden;
+html {
     margin: 0;
     padding: 0;
 }
 
-
-
+html,
+body {
+    width: 100%;
+    font-size: 14px;
+    font-family: "microsoft yahei", tahoma, arial, Helvetica, sans-serif;
+    background: @bg-body;
+}
 
 .page-body {
 
@@ -85,8 +81,7 @@ body {
                         top: 50%;
                         width: 77px;
                         height: 2px;
-                        background-color: #4891be;
-                        
+                        background-color: #4891be;                       
                     }
                     &::before {
                        left:-111px;
@@ -98,8 +93,6 @@ body {
             }
             &__right {
                 flex: 1;
-                // vertical-align: middle;
-                border: 1px solid red;
                 position: relative;
                 .zoom-btn {
                     display: inline-block;
@@ -111,7 +104,43 @@ body {
             }
         }
         &_nav {
-            
+            display: flex;
+            padding: 0 40px;
+            &__left {
+                flex: 1;
+                li {
+                    display: inline-block;
+                    &:nth-child(n+2) {
+                        margin-left: 18px;
+                    }
+                    a {
+                        color: #fff;
+                    }
+                    a:hover {
+                        color: #4891be;
+                    }
+                }
+            }
+            &__center {
+                width: 460px;
+            }
+
+            &__right {
+                flex: 1;
+                li {
+                    display: inline-block;
+                    &:nth-child(n+2) {
+                        margin-left: 18px;
+                    }
+                    a {
+                        color: #fff;
+                    }
+                    a:hover {
+                        color: #4891be;
+                    }
+                }
+
+            }
         }
         
     }
