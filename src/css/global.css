@@ -1,0 +1,101 @@
+/*** color(字体颜色、背景色)
+******************/
+/**
+ * 清除默认样式
+ */
+a {
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+/**
+ *整体布局
+ */
+html,
+body {
+  font-size: 14px;
+  font-family: "microsoft yahei", tahoma, arial, Helvetica, sans-serif;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+.page-body {
+  /* 页面首部
+   ========================================================================== */
+  /* 页面主体
+   ========================================================================== */
+}
+.page-body .header_msg {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 40px;
+  width: 100%;
+  height: 56px;
+  color: #fff;
+  line-height: 56px;
+  background-color: #0f223f;
+}
+.page-body .header_msg__left {
+  display: flex;
+  justify-content: space-around;
+  flex: 1;
+  height: 100%;
+  line-height: 56px;
+}
+.page-body .header_msg__left .logo {
+  display: inline-block;
+  margin-top: 12px;
+  width: 32px;
+  height: 34px;
+  background-color: #fff;
+}
+.page-body .header_msg__left .title {
+  display: inline-block;
+  font-size: 24px;
+  line-height: 56px;
+}
+.page-body .header_msg__left .nowdate {
+  display: inline-block;
+}
+.page-body .header_msg__center {
+  width: 460px;
+  text-align: center;
+}
+.page-body .header_msg__center .project-title {
+  position: relative;
+  font-size: 30px;
+  color: #4891be;
+}
+.page-body .header_msg__center .project-title::before,
+.page-body .header_msg__center .project-title::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  width: 77px;
+  height: 2px;
+  background-color: #4891be;
+}
+.page-body .header_msg__center .project-title::before {
+  left: -111px;
+}
+.page-body .header_msg__center .project-title::after {
+  right: -111px;
+}
+.page-body .header_msg__right {
+  flex: 1;
+  border: 1px solid red;
+  position: relative;
+}
+.page-body .header_msg__right .zoom-btn {
+  display: inline-block;
+  width: 24px;
+  height: 26px;
+  margin-top: 16px;
+  background-color: #fff;
+}
+.page-body .content {
+  padding: 0 40px;
+}
