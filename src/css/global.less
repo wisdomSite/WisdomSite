@@ -41,28 +41,31 @@ body {
             height: 56px;
             color: @font-white;
             line-height: 56px;
+            box-sizing: border-box;
             background-color: #0f223f;
+            border-bottom: 2px solid #79D5F2;  
             &__left {
-                display: flex;
-                justify-content: space-around;
                 flex: 1;
+                float: left;
                 height: 100%;
                 line-height: 56px;
                 .logo {
                 display: inline-block;
-                margin-top: 12px;
+                vertical-align: middle;
                 width: 32px;
                 height: 34px;
-                background-color: #fff;
-               
+                background-color: #fff; 
+            
                 }
                 .title {
                     display: inline-block;
-                    font-size: 24px;
+                    margin-left: 4px;
+                    font-size: 18px;
                     line-height: 56px;
                 }
                 .nowdate {
                     display: inline-block;
+                    margin-left: 6px;
                 }
                 
             }
@@ -96,49 +99,104 @@ body {
                 position: relative;
                 .zoom-btn {
                     display: inline-block;
+                    vertical-align: middle;
                     width: 24px;
                     height: 26px;
-                    margin-top: 16px;
                     background-color: #fff;
+                }
+                span {
+                    margin: 0 4px;
+                
                 }
             }
         }
         &_nav {
             display: flex;
             padding: 0 40px;
+            height: 34px;
             &__left {
                 flex: 1;
-                li {
+                ul {
+                    float: left;
+                    padding: 0;
+                    li {
+                        float: left;
+                        &:nth-child(n+2) {
+                            margin-left: 18px;
+                        }
+                        a {
+                            color: #fff;
+                        }
+                        a:hover {
+                            color: #4891be;
+                        }
+                    }
+                }
+
+            }
+            &__center {
+                position: relative;
+                margin-top: -4px;
+                width: 460px;
+                color: #fff;
+                background-color: #010926;               
+                box-sizing: border-box;
+                .accumulative-time {
                     display: inline-block;
-                    &:nth-child(n+2) {
-                        margin-left: 18px;
-                    }
-                    a {
-                        color: #fff;
-                    }
-                    a:hover {
+                    height: 100%;
+                    width: 100%;
+                    line-height: 34px; 
+                    text-align: center;
+                    border-right: 0;
+                    border-left: 0;
+                    border-top: 2px solid #0f223f;
+                    background-color: #0f223f;
+                    box-sizing: border-box;
+                    border-bottom: 2px solid #79D5F2;                  
+                    span {
                         color: #4891be;
                     }
                 }
-            }
-            &__center {
-                width: 460px;
+                .rotate-square {
+                    display: inline-block;
+                    position: absolute;
+                    top: 0;
+                    width: 22px;
+                    height: 44px;
+                    background-color: @bg-body;
+                    
+                }
+                .rotate-square__left {
+                    left: 0;
+                    transform:rotate(-30deg) translate3d(-12px,-5px,0);
+                    border-right: 2px solid #79D5F2;
+                }
+                .rotate-square__right {
+                    right: 0;
+                    transform:rotate(30deg) translate3d(10px,-5px,0);
+                    border-left: 2px solid #79D5F2;
+                }
             }
 
             &__right {
                 flex: 1;
-                li {
-                    display: inline-block;
-                    &:nth-child(n+2) {
-                        margin-left: 18px;
-                    }
-                    a {
-                        color: #fff;
-                    }
-                    a:hover {
-                        color: #4891be;
+                ul {
+                    padding: 0;
+                    float: right;
+                    li {
+                        display: inline-block;
+                        &:nth-child(n+2) {
+                            margin-left: 18px;
+                        }
+                        a {
+                            color: #fff;
+                        }
+                        a:hover {
+                            color: #4891be;
+                        }
                     }
                 }
+
 
             }
         }
@@ -148,8 +206,105 @@ body {
  /* 页面主体
    ========================================================================== */    
     .content {
-        padding: 0 40px;
+        padding: 40px 40px 0;
+        height: 600px;
+
+        &_wrapper {
+            display: flex;
+            height: 100%;
+        }
+        .content_left,
+        .content_center,
+        .content_right {
+            height: 100%;
+        }
+        .content_left {
+            flex: 1;
+            .card__engineer {
+                margin-bottom: 40px;
+                .card__content {
+                    ul {
+                        padding: 0;
+                        li {
+                            line-height: 32px;
+                            span {
+                                margin-left: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .content__center {
+            flex: 2;
+            margin-left: 20px;
+            border: 1px solid yellow;
+        }
+        .content__right {
+            flex: 1;
+            margin-left: 20px;
+        }
     }
     
 }
 
+ /* 自定义组件样式
+   ========================================================================== */  
+// card组件
+.card {
+    position: relative;
+    padding: 40px 0 20px 28px;
+    width: 100%;
+    // height: 300px;
+    border-radius: 4px;
+    background-color: #0f223f;
+    box-sizing: border-box;
+    &::before,
+    &::after {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        width: 60px;
+        height: 100px;
+    }
+    &::before {
+        right: 0;
+        top: 0;
+        border-top: 2px solid #4891BE;
+        border-right: 2px solid #4891BE;
+    }
+    &::after {
+        bottom: 0;
+        left: 0;
+        border-bottom: 2px solid #4891BE;
+        border-left: 2px solid #4891BE;
+    }
+    &__header {
+        font-weight: bold;
+        font-size: 16px;
+        color: #fff;
+        &__center {
+            text-align: center; 
+            font-size: 24px;
+        }
+    }
+    &__content {
+        font-size: 14px;
+        color: #fff;
+    }
+    &__top-title {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 180px;
+        height: 40px;
+        line-height: 40px;
+        color: #fff;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+        border-radius: 4px;
+        background-color: #4891BE;
+        transform: translate3d(-50%,-50%,0)
+    }
+}
