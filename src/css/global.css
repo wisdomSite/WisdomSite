@@ -9,6 +9,9 @@ a {
 li {
   list-style: none;
 }
+ul {
+  padding: 0;
+}
 /**
  *整体布局
  */
@@ -134,6 +137,7 @@ body {
   color: #fff;
   background-color: #010926;
   box-sizing: border-box;
+  overflow: hidden;
 }
 .page-body .header_nav__center .accumulative-time {
   display: inline-block;
@@ -166,7 +170,7 @@ body {
 }
 .page-body .header_nav__center .rotate-square__right {
   right: 0;
-  transform: rotate(30deg) translate3d(10px, -5px, 0);
+  transform: rotate(30deg) translate3d(12px, -5px, 0);
   border-left: 2px solid #79D5F2;
 }
 .page-body .header_nav__right {
@@ -229,7 +233,7 @@ body {
    ========================================================================== */
 .card {
   position: relative;
-  padding: 40px 0 20px 28px;
+  padding: 20px 28px 20px 28px;
   width: 100%;
   border-radius: 4px;
   background-color: #0f223f;
@@ -240,8 +244,8 @@ body {
   content: "";
   display: inline-block;
   position: absolute;
-  width: 60px;
-  height: 100px;
+  width: 10%;
+  height: 20%;
 }
 .card::before {
   right: 0;
@@ -264,9 +268,15 @@ body {
   text-align: center;
   font-size: 24px;
 }
+.card__header-top {
+  padding-top: 20px;
+}
 .card__content {
   font-size: 14px;
   color: #fff;
+}
+.card__content-top {
+  padding-top: 20px;
 }
 .card__top-title {
   position: absolute;
@@ -282,4 +292,80 @@ body {
   border-radius: 4px;
   background-color: #4891BE;
   transform: translate3d(-50%, -50%, 0);
+}
+.card__wrapper {
+  height: 100%;
+  display: flex;
+}
+.card__wrapper__left {
+  height: 100%;
+  flex: 3;
+  padding: 10px 0 10px 15px;
+}
+.card__wrapper__right {
+  margin-left: 20px;
+  height: 100%;
+  flex: 1;
+  padding: 10px 15px 15px 0;
+}
+.box-card {
+  box-sizing: border-box;
+  padding-bottom: 10px;
+}
+.box-card__header {
+  width: 100%;
+}
+.box-card__header__title {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+}
+.box-card__header__text-right {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  float: right;
+}
+.box-card__content {
+  width: 100%;
+  padding-top: 10px;
+}
+.icon-text::before {
+  content: "";
+  display: inline-block;
+  margin-right: 6px;
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  vertical-align: middle;
+}
+.icon-circle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90px;
+  height: 90px;
+}
+.icon-circle__graph {
+  width: 50px;
+  height: 50px;
+  background-color: #999;
+  border-radius: 50%;
+}
+.icon-circle__title {
+  font-size: 12px;
+  color: #fff;
+  text-align: center;
+}
+/* 封装原始组合样式
+   ========================================================================== */
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+/* 重置自定义样式
+   ========================================================================== */
+.remove-padding {
+  padding: 0;
 }
