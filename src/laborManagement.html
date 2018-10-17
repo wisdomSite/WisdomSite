@@ -35,10 +35,10 @@
             <div class="header_nav">
                 <div class="header_nav__left">
                     <ul>
-                        <li><a href="./ProjectOverview.html">项目概况</a></li>
+                        <li><a href="./projectOverview.html">项目概况</a></li>
                         <li><a href="">资金管理</a></li>
                         <li><a href="./realTimeMonitoring.html">实时监控</a></li>
-                        <li><a href="">环境监测</a></li>
+                        <li><a href="./environmentalMonitoring.html">环境监测</a></li>
                         <li><a href="./equipmentMonitoring.html">设备监控</a></li>
                     </ul>
                 </div>
@@ -57,7 +57,7 @@
                         <li><a href="">物料管理</a></li>
                         <li><a href="./laborManagement.html">劳务管理</a></li>
                         <li><a href="">进度管理</a></li>
-                        <li><a href="">安全管理</a></li>
+                        <li><a href="./securityManagement.html">安全管理</a></li>
                         <li><a href="./qualityManagement.html">质量管理</a></li>
                     </ul>
                 </div>
@@ -71,7 +71,7 @@
                             <span class="card_header__title">人员</span>
                         </div>
                         <div class="card__content" style="padding-left: 0;">
-                            <ul style="padding-right: 20px;margin-left: -10px;">
+                            <ul style="padding-right: 20px;margin-left: -10px;font-size: 12px;">
                                 <li class="flex-between"><span class="icon-text">进场等级人数</span><span>356</span></li>
                                 <li class="flex-between"><span class="icon-text">进场等级人数</span><span>356</span></li>
                                 <li class="flex-between"><span class="icon-text">进场等级人数</span><span>356</span></li>
@@ -90,34 +90,64 @@
                     <div class="card">
                         <div class="card__top-title">人脸识别</div>
                         <div class="card__content card__content-top">
-                            <div class="" style="border: 1px solid red;">
-                                <div>
+                            <div class="flex-space_around">
+                                <div class="flex-column_aligncenter">
                                     <div class="realTime-avatar"><img src="xxx" alt=""></div>
-                                    <p>实时监控头像</p>
+                                    <p class="text-center">实时监控头像</p>
                                 </div>
-                                <div>
+                                <div class="flex-column_aligncenter">
                                     <div class="register-avatar"><img src="xxx" alt=""></div>
-                                    <p>登记人头像</p>
+                                    <p class="text-center">登记人头像</p>
                                 </div>
                             </div>
-                            <div class="">
-                                <div>
-                                    <ul>
-                                        <li><span>姓名</span><span>张三</span></li>
-                                        <li><span>年龄</span><span>18</span></li>
-                                        <li><span>识别机位</span><span>1号入口闸机</span></li>
-                                        <li><span>初次进入</span><span>2018-10-11 12:45:16</span></li>
-                                        <li><span>末次</span><span>2018-10-11 12:45:16</span></li>
-                                    </ul>  
+                            <div class="dis-flex" style="border-top: 1px solid red;padding: 10px;">
+                                <div class="flex-1 margin-left-20"> 
+                                    <table class="table-info"> 
+                                        <tr> 
+                                            <td>姓名</td> 
+                                            <td>小明</td> 
+                                        </tr> 
+                                        <tr> 
+                                            <td>年龄</td> 
+                                            <td>18</td> 
+                                        </tr> 
+                                        <tr> 
+                                            <td>识别机位</td> 
+                                            <td>1号入口闸机</td> 
+                                        </tr>
+                                        <tr> 
+                                            <td>初次进入</td> 
+                                            <td>2018-10-11 12:11:11</td> 
+                                        </tr>
+                                        <tr> 
+                                            <td>末次</td> 
+                                            <td>2018-10-11 21:45:16</td> 
+                                        </tr> 
+                                    </table>
                                 </div>
-                                <div>
-                                    <ul>
-                                        <li><span>职务</span><span>班组长</span></li>
-                                        <li><span>班组</span><span>测试班组</span></li>
-                                        <li><span>工种</span><span>电焊工</span></li>
-                                        <li><span>级别</span><span>A级</span></li>
-                                        <li><span>参建单位</span><span>项目测试有限公司</span></li>
-                                    </ul>
+                                <div class="flex-1 margin-left-80">
+                                    <table class="table-info"> 
+                                        <tr> 
+                                            <td>职务</td> 
+                                            <td>班组长</td> 
+                                        </tr> 
+                                        <tr> 
+                                            <td>班组</td> 
+                                            <td>测试班组</td> 
+                                        </tr> 
+                                        <tr> 
+                                            <td>工种</td> 
+                                            <td>电焊工</td> 
+                                        </tr>
+                                        <tr> 
+                                            <td>级别</td> 
+                                            <td>A级</td> 
+                                        </tr>
+                                        <tr> 
+                                            <td>参建单位</td> 
+                                            <td>项目测试有限公司</td> 
+                                        </tr> 
+                                    </table>
                                 </div>
                             </div>
                         </div>
@@ -133,21 +163,113 @@
                 </div>
                 <div class="content__right">
                     <div class="card">
-                        <div class=""></div>
                         <div class="card__header">
-                            <span class="card_header__title">质量</span>
+                            <span class="card_header__title">分包单位</span>
                         </div>
                         <div class="card__content">
-                            <div id="quality-chart" style="width: 200px; height: 200px;"></div>
+                            <div class="box-card box-card__border">
+                                <div class="box-card__header">
+                                    <span class="box-card__header__title">项目测试有限公司</span>
+                                </div>
+                                <div class="box-card__content">
+                                    <table class="table-info" style="font-size: 12px;">
+                                        <tr class="three-column">
+                                            <td>到场人数</td>
+                                            <td></td>
+                                            <td>42</td>
+                                        </tr>
+                                        <tr  class="three-column">
+                                            <td>到场人数</td>
+                                            <td></td>
+                                            <td>42</td>
+                                        </tr>
+                                        <tr class="three-column">
+                                            <td>到场人数</td>
+                                            <td ></td>
+                                            <td>42</td>
+                                        </tr>
+                                        <tr  class="three-column">
+                                            <td>到场人数</td>
+                                            <td></td>
+                                            <td>42</td>
+                                        </tr>
+                                        <tr  class="three-column">
+                                            <td>到场人数</td>
+                                            <td></td>
+                                            <td>42</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="box-card box-card__border">
+                                <div class="box-card__header">
+                                    <span class="box-card__header__title">项目测试有限公司</span>
+                                </div>
+                                <div class="box-card__content padding-updown-10">
+                                    <table class="table-info" style="font-size: 12px;">
+                                        <tr class="three-column">
+                                            <td>到场人数</td>
+                                            <td></td>
+                                            <td>42</td>
+                                        </tr>
+                                        <tr  class="three-column">
+                                            <td>到场人数</td>
+                                            <td></td>
+                                            <td>42</td>
+                                        </tr>
+                                        <tr class="three-column">
+                                            <td>到场人数</td>
+                                            <td ></td>
+                                            <td>42</td>
+                                        </tr>
+                                        <tr  class="three-column">
+                                            <td>到场人数</td>
+                                            <td></td>
+                                            <td>42</td>
+                                        </tr>
+                                        <tr  class="three-column">
+                                            <td>到场人数</td>
+                                            <td></td>
+                                            <td>42</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="box-card box-card__border">
+                                <div class="box-card__header">
+                                    <span class="box-card__header__title">项目测试有限公司</span>
+                                </div>
+                                <div class="box-card__content">
+                                    <table class="table-info" style="font-size: 12px;">
+                                        <tr class="three-column">
+                                            <td>到场人数</td>
+                                            <td></td>
+                                            <td>42</td>
+                                        </tr>
+                                        <tr  class="three-column">
+                                            <td>到场人数</td>
+                                            <td></td>
+                                            <td>42</td>
+                                        </tr>
+                                        <tr class="three-column">
+                                            <td>到场人数</td>
+                                            <td ></td>
+                                            <td>42</td>
+                                        </tr>
+                                        <tr  class="three-column">
+                                            <td>到场人数</td>
+                                            <td></td>
+                                            <td>42</td>
+                                        </tr>
+                                        <tr  class="three-column">
+                                            <td>到场人数</td>
+                                            <td></td>
+                                            <td>42</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
-                        <div class="card__header">
-                            <span class="card_header__title">安全</span>
-                        </div>
-                        <div class="card__content"></div>
-                        <div class="card__header">
-                            <span class="card_header__title">劳务</span>
-                        </div>
-                        <div class="card__content"></div>
                     </div>
                 </div>
             </div>

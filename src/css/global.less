@@ -17,19 +17,20 @@ ul {
 /**
  *整体布局
  */
-html {
-    margin: 0;
-    padding: 0;
-}
 
 html,
-body {
+body,
+.page-body {
     width: 100%;
+    height: 100%;
     font-size: 14px;
     font-family: "microsoft yahei", tahoma, arial, Helvetica, sans-serif;
-    background: @bg-body;
 }
-
+body {
+    background: @bg-body url(../images/bg_grid.png) repeat-x;
+    background-position: 0 100%;
+    background-attachment: fixed;
+}
 .page-body {
 
  /* 页面首部
@@ -45,7 +46,8 @@ body {
             line-height: 56px;
             box-sizing: border-box;
             background-color: #0f223f;
-            border-bottom: 2px solid #79D5F2;  
+            border-bottom: 2px solid #79D5F2; 
+            box-shadow: 1px 1px 5px rgba(121, 213, 242, .8),inset 1px 1px 5px rgba(121, 213, 242, .8); 
             &__left {
                 flex: 1;
                 float: left;
@@ -76,8 +78,8 @@ body {
                 text-align: center;
                 .project-title {
                     position: relative;
-                    font-size: 30px;
-                    color: #4891be;
+                    font-size: 24px;
+                    color: #83CBE4;
                     &::before,
                     &::after {
                         content: "";
@@ -86,13 +88,14 @@ body {
                         top: 50%;
                         width: 77px;
                         height: 2px;
-                        background-color: #4891be;                       
                     }
                     &::before {
                        left:-111px;
+                       background: linear-gradient(90deg,#2C6790 0%,#4EC1E2 25%,#4EC1E2 100%);
                     }
                     &::after {
                         right:-111px;
+                        background: linear-gradient(-90deg,#2C6790 0%,#4EC1E2 25%,#4EC1E2 100%);
                     }
                 }
             }
@@ -107,8 +110,7 @@ body {
                     background-color: #fff;
                 }
                 span {
-                    margin: 0 4px;
-                
+                    margin: 0 4px;                
                 }
             }
         }
@@ -118,6 +120,7 @@ body {
             height: 34px;
             &__left {
                 flex: 1;
+                .clear-fix;
                 ul {
                     float: left;
                     padding: 0;
@@ -171,18 +174,19 @@ body {
                 }
                 .rotate-square__left {
                     left: 0;
-                    transform:rotate(-30deg) translate3d(-12px,-5px,0);
+                    transform:rotate(-26deg) translate3d(-13px,-5px,0);
                     border-right: 2px solid #79D5F2;
                 }
                 .rotate-square__right {
                     right: 0;
-                    transform:rotate(30deg) translate3d(12px,-5px,0);
+                    transform:rotate(26deg) translate3d(13px,-5px,0);
                     border-left: 2px solid #79D5F2;
                 }
             }
 
             &__right {
                 flex: 1;
+                .clear-fix;
                 ul {
                     padding: 0;
                     float: right;
@@ -230,6 +234,7 @@ body {
                         padding: 0;
                         li {
                             line-height: 32px;
+                            .text-point;
                             span {
                                 margin-left: 10px;
                             }
@@ -239,7 +244,7 @@ body {
             }
         }
         .content__center {
-            flex: 2;
+            flex: 3;
             margin-left: 20px;
             border: 1px solid yellow;
         }
@@ -252,6 +257,38 @@ body {
 }
 
 //劳务管理页面
+.content {
+    &__center {
+        .realTime-avatar,
+        .register-avatar {
+            height: 320px;
+        }
+        .realTime-avatar {
+            width: 480px;           
+            background-color: #999;
+        }
+        .register-avatar {
+            width: 218px;
+            background-color: #999;
+        }
+    }
+}
+//环境监测页面
+.content {
+    height: 600px;
+    &__wrapper {
+        display: flex;
+        height: 100%;
+        &__left {
+            flex: 1;
+            // border: 1px solid yellow;
+        }
+        &__right {
+            flex: 4;
+            margin-left: 20px;
+        }
+    }
+}
 
 
  /* 自定义组件样式
@@ -259,11 +296,46 @@ body {
 // card组件
 .card {
     position: relative;
-    padding: 20px 28px 20px 28px;
+    padding: 20px 16px;
     width: 100%;
     border-radius: 4px;
-    background-color: #0f223f;
+    background: rgba(15, 34, 63, .5);
     box-sizing: border-box;
+    &__header {
+        font-weight: 700;
+        font-size: 14px;
+        color: #fff;
+        &__center {
+            text-align: center; 
+            font-size: 24px;
+        }
+    }
+    &__header-top {
+        padding-top: 20px;
+    }
+    &__content {
+        font-size: 12px;
+        color: #fff;
+    }
+    &__content-top {
+        padding-top: 20px;
+    }
+    &__top-title {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 50%;
+        max-width: 180px;
+        height: 32px;
+        line-height: 32px;
+        color: #fff;
+        font-size: 14px;
+        font-weight: bold;
+        text-align: center;
+        border-radius: 4px;
+        background-color: #4891BE;
+        transform: translate3d(-50%,-50%,0);       
+    }
     &::before,
     &::after {
         content: "";
@@ -284,40 +356,6 @@ body {
         border-bottom: 2px solid #4891BE;
         border-left: 2px solid #4891BE;
     }
-    &__header {
-        font-weight: bold;
-        font-size: 16px;
-        color: #fff;
-        &__center {
-            text-align: center; 
-            font-size: 24px;
-        }
-    }
-    &__header-top {
-        padding-top: 20px;
-    }
-    &__content {
-        font-size: 14px;
-        color: #fff;
-    }
-    &__content-top {
-        padding-top: 20px;
-    }
-    &__top-title {
-        position: absolute;
-        top: 0;
-        left: 50%;
-        width: 180px;
-        height: 40px;
-        line-height: 40px;
-        color: #fff;
-        font-size: 16px;
-        font-weight: bold;
-        text-align: center;
-        border-radius: 4px;
-        background-color: #4891BE;
-        transform: translate3d(-50%,-50%,0);       
-    }
     &__wrapper {
         height: 100%;
         display: flex;
@@ -331,7 +369,7 @@ body {
             margin-left: 20px;
             height: 100%;
             flex: 1;
-            padding: 10px 15px 15px 0;
+            padding: 10px 15px 15px 0;  
         }
     }
 }
@@ -340,30 +378,37 @@ body {
 .box-card {
     box-sizing: border-box;
     padding-bottom: 10px;
+
+    &:last-child {
+        border-bottom: none;
+    }   
     &__header {
         width: 100%;
         &__title {
             color: #fff;
-            font-size: 16px;
+            font-size: 14px;
             font-weight: 500;
+            line-height: 32px;
         }
         &__text-right {
             color: #fff;
-            font-size: 16px;
+            font-size: 14px;
             font-weight: 500;
-            // text-align: right;
             float: right;
+            line-height: 32px;
         }
-
     }
     &__content {
         width: 100%;
-        padding-top: 10px;
+        padding: 10px 0;
     }
 }
+.box-card__border {
+    border-bottom: 1px solid #316180;
+}
+
 //icon-text组件
 .icon-text {
-    // position: relative;
     &::before {
         content: "";
         display: inline-block;
@@ -395,8 +440,69 @@ body {
     }
 }
 
+//table-info组件
+.table-info {
+    width: 100%;
+    tr {       
+        td {
+            vertical-align: middle;
+            &:first-child {
+                text-align: left;
+            }
+            &:last-child {
+                text-align: right;
+            }
+        }
+    }
+    .three-column {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        line-height: 30px;
+        td {
+            vertical-align: middle;
+            &:first-child {
+                text-align: left;
+            }
+            &:nth-child(2) {
+                display:inline-block;
+                width: 80px;
+                height:4px;
+                background-color: yellow; 
+                border-radius: 10px;
+            }
+            &:last-child {
+                text-align: right;
+            }
+        }
+    }
+}
+//table-list组件
+    .table-list {   
+        width: 100%;       
+        tr {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+            padding:1px 8px; 
+            font-size: 12px;
+            color: #fff;
+            text-align: center;
+            background: rgba(26,52,82,.6);            
+            th {
+                flex: 1;
+                padding: 10px 0;
+            }
+            td {
+                flex: 1;               
+            }
+        }
+        .tr__th {
+            margin-bottom: 20px;
+            background: linear-gradient(90deg,#011832 0%,#10486E 50%,#011832 100%);
+        }
 
-
+    }
 
  /* 封装原始组合样式
    ========================================================================== */  
@@ -406,6 +512,28 @@ body {
     justify-content: space-between;
     flex-wrap: wrap;
 }
+.flex-space_around {
+    display: flex;
+    justify-content: space-around;
+}
+.flex-column_aligncenter {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+}
+.flex-space_between {
+    display: flex;
+    justify-content: space-between;
+}
+.dis-flex {
+    display: flex;
+}
+.flex-1 {
+    flex: 1;
+}
+.flex-3 {
+    flex: 3;
+}
 
 
  /* 重置自定义样式
@@ -413,3 +541,25 @@ body {
 .remove-padding {
     padding: 0;
 }
+.inline-block {
+    display: inline-block;
+}
+.text-center {
+    text-align: center;
+}
+.margin-left-20 {
+    margin-left: 20px;
+}
+.margin-left-80 {
+    margin-left: 80px;
+}
+.margin-bottom-20 {
+    margin-bottom: 20px;
+}
+.margin-top-20 {
+    margin-top: 20px;
+}
+// .padding-updown-10 {
+//     padding: 10px 0;
+// }
+// .bor-down-

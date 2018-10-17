@@ -4,3 +4,18 @@
 @bg: #4891be;
 @font-blue: #4897ce;
 @bg-body:#010926;
+
+//单行文本溢出打点
+.text-point(){
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+//清除浮动
+.clear-fix(){
+    &::after {
+     content: "";
+     display: block;
+     clear: both;
+    }
+}
