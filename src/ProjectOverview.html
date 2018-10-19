@@ -65,15 +65,15 @@
             </div>
         </div>
         <div class="content">
-            <div class="content_wrapper">
-                <div class="content_left">
-                    <div class="card card__engineer">
+            <div class="content__wrapper">
+                <div class="content__left">
+                    <div class="card content__engineer">
                         <div class="card__top-title">工程概况</div>
-                        <div class="card__header card__header-top">
+                        <div class="card__header padding-top-20">
                             <span class="card_header__title">工程概况</span>
                         </div>
                         <div class="card__content">
-                            <ul style="font-size: 12px;">
+                            <ul>
                                 <li>工程名称<span>深圳恒大中心</span></li>
                                 <li>建设单位<span>恒大集团有限公司</span></li>
                                 <li>监理单位<span>上海市建设工程咨询监理有限公司</span></li>
@@ -85,38 +85,86 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="card">
+                    <div class="card content__env margin-top-40">
                         <div class="card__top-title">环境监测</div>
-                        <div class="card__header card__header__center">
-                            <p>AQI <span>78良</span></p>
+                        <div class="box-card">
+                            <div class="box-card__header">
+                                <div class="box-card__header__title-center">
+                                    <span>AQI</span><span class="title-right">78良</span>
+                                </div>
+                                <div class="box-card__content">
+                                    <div class="flex-alignitem_center margin-top-20">
+                                            <div class="icon-text icon-text-pm25 flex-1">PM2.5<span>57</span></div>
+                                            <div class="icon-text icon-text-thermometer flex-1">温度<span>28</span></div>
+                                    </div>
+                                    <div class="flex-alignitem_center margin-top-20">
+                                            <div class="icon-text icon-text-pm10 flex-1">PM10<span>70</span></div>
+                                            <div class="icon-text icon-text-humidity flex-1">湿度<span>67%</span></div>
+                                    </div>
+                                    <div class="flex-alignitem_center margin-top-20">
+                                            <div class="icon-text icon-text-noise flex-1">噪音<span>57dB</span></div>
+                                            <div class="icon-text icon-text-windspeed flex-1">风速<span>0.6m/s</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box-card__content">
+
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="content__center">
-                    <div class="banner"></div>
-                </div>
-                <div class="content__right">
-                    <div class="card">
-                        <div class="card__top-title">质量安全与劳务</div>
-                        <div class=""></div>
-                        <div class="card__header card__header-top">
-                            <span class="card_header__title">质量</span>
-                        </div>
-                        <div class="card__content">
-                            <div id="quality-chart" style="width: 200px; height: 200px;"></div>
-                        </div>
+                    <div class="banner" style="width:100%;height:460px;background:#999;"></div>
+                    <div class="card margin-top-40">
+                        <div class="card__top-title">工程进度</div>                     
                         <div class="card__header">
-                            <span class="card_header__title">安全</span>
-                        </div>
-                        <div class="card__content"></div>
-                        <div class="card__header">
-                            <span class="card_header__title">劳务</span>
+                            <span class="card__header__title">工程进度</span>
                         </div>
                         <div class="card__content"></div>
                     </div>
                 </div>
-            </div>
-
+                <div class="content__right">
+                    <div class="card">
+                        <div class="card__top-title">质量安全与劳务</div>
+                        <div class="box-card box-card__border">
+                            <div class="box-card__header">
+                                <span class="box-card__header__title">质量</span>
+                            </div>
+                            <div class="box-card__content"></div>
+                        </div>
+                        <div class="box-card box-card__border">
+                            <div class="box-card__header">
+                                <span class="box-card__header__title">安全</span>
+                            </div>
+                            <div class="box-card__content"></div>
+                        </div>
+                        <div class="box-card box-card__border content__labor">
+                            <div class="box-card__header">
+                                <span class="box-card__header__title">劳务</span>
+                            </div>
+                            <div class="box-card__content">
+                                <div class="dis-flex">
+                                    <div class="flex-column_aligncenter flex-1">
+                                        <div class="labor-icon_peoplenumber"></div>
+                                        <span class="margin-top-20">实时人数</span>
+                                        <span class="margin-top-20">98人</span>
+                                    </div>
+                                    <div class="flex-column_aligncenter flex-1">
+                                        <div class="labor-icon_labor"></div>
+                                        <span class="margin-top-20">劳务人员</span>
+                                        <span class="margin-top-20">68人</span>
+                                    </div>
+                                    <div class="flex-column_aligncenter flex-1">
+                                        <div class="labor-icon_manager"></div>
+                                        <span class="margin-top-20">管理人员</span>
+                                        <span class="margin-top-20">28人</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
         </div>
     </div>
     <script src="./js/echarts.min.js"></script>

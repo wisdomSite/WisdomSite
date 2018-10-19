@@ -24,6 +24,7 @@ body,
   font-family: "microsoft yahei", tahoma, arial, Helvetica, sans-serif;
 }
 body {
+  min-width: 1350px;
   background: #010926 url(../images/bg_grid.png) repeat-x;
   background-position: 0 100%;
   background-attachment: fixed;
@@ -45,7 +46,6 @@ body {
   box-sizing: border-box;
   background-color: #0f223f;
   border-bottom: 2px solid #79D5F2;
-  box-shadow: 1px 1px 5px rgba(121, 213, 242, 0.8), inset 1px 1px 5px rgba(121, 213, 242, 0.8);
 }
 .page-body .header_msg__left {
   flex: 1;
@@ -105,7 +105,8 @@ body {
   vertical-align: middle;
   width: 24px;
   height: 26px;
-  background-color: #fff;
+  background: url(../images/icon/icon_zoom.png) no-repeat;
+  background-size: contain;
 }
 .page-body .header_msg__right span {
   margin: 0 4px;
@@ -147,6 +148,7 @@ body {
   background-color: #010926;
   box-sizing: border-box;
   overflow: hidden;
+  border-radius: 4px;
 }
 .page-body .header_nav__center .accumulative-time {
   display: inline-block;
@@ -171,6 +173,7 @@ body {
   width: 22px;
   height: 44px;
   background-color: #010926;
+  border-radius: 4px;
 }
 .page-body .header_nav__center .rotate-square__left {
   left: 0;
@@ -207,44 +210,88 @@ body {
   color: #4891be;
 }
 .page-body .content {
-  padding: 40px 40px 0;
-  height: 600px;
+  padding: 40px;
 }
-.page-body .content_wrapper {
+.page-body .content__wrapper {
   display: flex;
   height: 100%;
 }
-.page-body .content .content_left,
-.page-body .content .content_center,
-.page-body .content .content_right {
-  height: 100%;
+.page-body .content__wrapper__left {
+  flex: 4;
 }
-.page-body .content .content_left {
+.page-body .content__wrapper__right {
   flex: 1;
 }
-.page-body .content .content_left .card__engineer {
-  margin-bottom: 40px;
+.page-body .content .content__left,
+.page-body .content .content__center,
+.page-body .content .content__right {
+  height: 100%;
 }
-.page-body .content .content_left .card__engineer .card__content ul {
-  padding: 0;
+.page-body .content .content__left {
+  flex: 1;
 }
-.page-body .content .content_left .card__engineer .card__content ul li {
+.page-body .content .content__center {
+  flex: 3;
+  margin-left: 20px;
+}
+.page-body .content .content__right {
+  flex: 1;
+  margin-left: 20px;
+}
+.content__engineer .card__content ul {
+  color: #fff;
+  font-size: 12px;
+}
+.content__engineer .card__content ul li {
   line-height: 32px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-.page-body .content .content_left .card__engineer .card__content ul li span {
+.content__engineer .card__content ul li span {
   margin-left: 10px;
 }
-.page-body .content .content__center {
-  flex: 3;
-  margin-left: 20px;
-  border: 1px solid yellow;
+.content__env .box-card__content {
+  font-size: 12px;
 }
-.page-body .content .content__right {
-  flex: 1;
-  margin-left: 20px;
+.content__labor .box-card__content {
+  color: #fff;
+  font-size: 12px;
+}
+.content__labor .box-card__content .labor-icon_peoplenumber {
+  width: 40px;
+  height: 27px;
+  background: url(../images/icon/icon_peoplenumber.png) no-repeat center center;
+}
+.content__labor .box-card__content .labor-icon_labor {
+  width: 23px;
+  height: 30px;
+  background: url(../images/icon/icon_labor.png) no-repeat;
+}
+.content__labor .box-card__content .labor-icon_manager {
+  width: 25px;
+  height: 27px;
+  background: url(../images/icon/icon_manager.png) no-repeat;
+}
+.content__pro-draw__img {
+  width: 100%;
+  overflow: hidden;
+}
+.content__pro-draw__img img {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+}
+.content__monitor-equ .monitor-equ__list li {
+  padding: 4px 20px;
+  margin-bottom: 4px;
+  font-size: 12px;
+  background-color: #0B2A5E;
+  border: 2px solid #1C3778;
+  border-radius: 4px;
+}
+.content__monitor-equ .monitor-equ__list li:hover {
+  background-color: #0F223F;
 }
 .content__center .realTime-avatar,
 .content__center .register-avatar {
@@ -279,7 +326,7 @@ body {
   padding: 20px 16px;
   width: 100%;
   border-radius: 4px;
-  background: rgba(15, 34, 63, 0.5);
+  background: rgba(131, 203, 228, 0.2);
   box-sizing: border-box;
 }
 .card__header {
@@ -290,9 +337,6 @@ body {
 .card__header__center {
   text-align: center;
   font-size: 24px;
-}
-.card__header-top {
-  padding-top: 20px;
 }
 .card__content {
   font-size: 12px;
@@ -360,20 +404,28 @@ body {
   border-bottom: none;
 }
 .box-card__header {
+  padding: 20px 0;
   width: 100%;
-}
-.box-card__header__title {
   color: #fff;
-  font-size: 14px;
-  font-weight: 500;
   line-height: 32px;
 }
+.box-card__header__title {
+  font-size: 14px;
+  font-weight: 800;
+}
 .box-card__header__text-right {
-  color: #fff;
   font-size: 14px;
   font-weight: 500;
   float: right;
-  line-height: 32px;
+}
+.box-card__header__title-center {
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+}
+.box-card__header__title-center .title-right {
+  margin-left: 35px;
+  color: #85F58F;
 }
 .box-card__content {
   width: 100%;
@@ -382,14 +434,20 @@ body {
 .box-card__border {
   border-bottom: 1px solid #316180;
 }
+.icon-text {
+  color: #82A9BA;
+}
 .icon-text::before {
   content: "";
   display: inline-block;
   margin-right: 6px;
-  width: 20px;
-  height: 20px;
-  background-color: red;
+  width: 35px;
+  height: 30px;
   vertical-align: middle;
+  background-repeat: no-repeat;
+}
+.icon-text span:last-child {
+  margin-left: 4px;
 }
 .icon-circle {
   display: flex;
@@ -487,6 +545,10 @@ body {
   display: flex;
   justify-content: space-between;
 }
+.flex-alignitem_center {
+  display: flex;
+  align-items: center;
+}
 .dis-flex {
   display: flex;
 }
@@ -496,11 +558,16 @@ body {
 .flex-3 {
   flex: 3;
 }
-/* 重置自定义样式
-   ========================================================================== */
-.remove-padding {
-  padding: 0;
+.float-left {
+  float: left;
 }
+.float-left::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+/* 重置盒子自定义样式
+   ========================================================================== */
 .inline-block {
   display: inline-block;
 }
@@ -518,4 +585,79 @@ body {
 }
 .margin-top-20 {
   margin-top: 20px;
+}
+.margin-top-40 {
+  margin-top: 40px;
+}
+.margin-top-10 {
+  margin-top: 10px;
+}
+.padding-top-20 {
+  padding-top: 20px;
+}
+.padding-0 {
+  padding: 0;
+}
+/* icon图标
+   ========================================================================== */
+.icon-text-pm25::before {
+  background-image: url(../images/icon/icon_pm25.png);
+}
+.icon-text-thermometer::before {
+  width: 18px;
+  height: 36px;
+  background-image: url(../images/icon/icon_thermometer.png);
+}
+.icon-text-pm10::before {
+  background-image: url(../images/icon/icon_pm10.png);
+}
+.icon-text-humidity::before {
+  width: 24px;
+  height: 33px;
+  background-image: url(../images/icon/icon_humidity.png);
+}
+.icon-text-noise::before {
+  background-image: url(../images/icon/icon_noise.png);
+}
+.icon-text-windspeed::before {
+  background-image: url(../images/icon/icon_windspeed.png);
+}
+.icon-text-warn::before {
+  background-image: url(../images/icon/icon_warn.png);
+}
+.icon-text-env::before {
+  background-image: url(../images/icon/icon_env.png);
+}
+.icon-text-env-active::before {
+  background-image: url(../images/icon/icon_env_active.png);
+}
+.icon-text-monitor::before {
+  background-image: url(../images/icon/icon_monitor.png);
+}
+.icon-text-monitor-active::before {
+  background-image: url(../images/icon/icon_monitor_active.png);
+}
+.icon-text-smoke::before {
+  background-image: url(../images/icon/icon_smoke.png);
+}
+.icon-text-smoke-active::before {
+  background-image: url(../images/icon/icon_smoke_active.png);
+}
+.icon-text-classify::before {
+  background-image: url(../images/icon/icon_classify.png);
+}
+.icon-text-classify-active::before {
+  background-image: url(../images/icon/icon_classify_active.png);
+}
+.icon-text-electric::before {
+  background-image: url(../images/icon/icon_electric.png);
+}
+.icon-text-electric-active::before {
+  background-image: url(../images/icon/icon_electric_active.png);
+}
+.icon-text-watermeter::before {
+  background-image: url(../images/icon/icon_watermeter.png);
+}
+.icon-text-watermeter-active::before {
+  background-image: url(../images/icon/icon_watermeter_active.png);
 }
