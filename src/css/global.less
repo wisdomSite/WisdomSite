@@ -1,6 +1,4 @@
-@import "variables.less";
-
-
+@import './variables.less';
 /**
  * 清除默认样式
  */
@@ -19,8 +17,7 @@ ul {
  */
 
 html,
-body,
-.page-body {
+body {
     width: 100%;
     height: 100%;
     font-size: 14px;
@@ -58,8 +55,7 @@ body {
                 vertical-align: middle;
                 width: 32px;
                 height: 34px;
-                background-color: #fff; 
-            
+                background-color: #fff;            
                 }
                 .title {
                     display: inline-block;
@@ -70,8 +66,7 @@ body {
                 .nowdate {
                     display: inline-block;
                     margin-left: 6px;
-                }
-                
+                }               
             }
             &__center{
                 width: 460px;
@@ -219,12 +214,11 @@ body {
         padding: 40px;
         &__wrapper {
             display: flex;
-            height: 100%;
             &__left {
-                flex: 4;
+                flex: 1;
             }
             &__right {
-                flex: 1;
+                flex: 4;
             }
         }
         .content__left,
@@ -241,114 +235,245 @@ body {
             flex: 1;
             margin-left: 20px;
         }
-    }    
-}
 
-//项目概况页面
-.content {
-    &__engineer {//工程概况
-        .card__content {
-            ul {
-                color: #fff;
-                font-size: 12px;
-                li {
-                    line-height: 32px;
-                    .text-point;
-                    span {
-                        margin-left: 10px;
+        &__engineer {//工程概况
+            .card__content {
+                ul {
+                    color: #fff;
+                    font-size: 12px;
+                    li {
+                        line-height: 32px;
+                        .text-point;
+                        span {
+                            margin-left: 10px;
+                        }
                     }
                 }
             }
         }
-    }
-    &__env {//环境监测
-        .box-card__content {
-            font-size: 12px;
-        }
-    }
-    &__labor {//劳务         
-        .box-card__content {
-            color: #fff;
-            font-size: 12px;
-            .labor-icon_peoplenumber {
-                width: 40px;
-                height: 27px;
-                background: url(../images/icon/icon_peoplenumber.png) no-repeat center center;
-            }
-            .labor-icon_labor {
-                width: 23px;
-                height: 30px;
-                background: url(../images/icon/icon_labor.png)no-repeat ;
-            }
-            .labor-icon_manager {
-                width: 25px;
-                height: 27px;
-                background: url(../images/icon/icon_manager.png)no-repeat;
-            }
-        }
-    }
-    &__pro-draw {//项目工程图
-        &__img {
-            width: 100%;
-            overflow: hidden;
-            img {
-                width: 100%;
-                height: auto;
-                max-height: 500px;
-            }
-        }
-    }
-    &__monitor-equ {//监控设备
-        .monitor-equ__list {
-            li {
-                padding: 4px 20px;
-                margin-bottom: 4px;
+        &__env {//环境监测
+            .box-card__content {
                 font-size: 12px;
-                background-color: #0B2A5E;
-                border: 2px solid #1C3778;
-                border-radius: 4px;
-            }
-            li:hover {
-                background-color:#0F223F;
-                
             }
         }
-    }
-}
+        &__labor {//劳务         
+            .box-card__content {
+                color: #fff;
+                font-size: 12px;
+                .labor-icon_peoplenumber {
+                    width: 40px;
+                    height: 27px;
+                    background: url(../images/icon/icon_peoplenumber.png) no-repeat center center;
+                }
+                .labor-icon_labor {
+                    width: 23px;
+                    height: 30px;
+                    background: url(../images/icon/icon_labor.png)no-repeat ;
+                }
+                .labor-icon_manager {
+                    width: 25px;
+                    height: 27px;
+                    background: url(../images/icon/icon_manager.png)no-repeat;
+                }
+            }
+        }
+        &__pro-draw {//项目工程图
+            &__img {
+                width: 100%;
+                overflow: hidden;
+                img {
+                    width: 100%;
+                    height: auto;
+                    max-height: 500px;
+                }
+            }
+        }
+        &__monitor-equ {//监控设备
+            .monitor-equ__list {
+                li {
+                    padding: 4px 20px;
+                    margin-bottom: 4px;
+                    font-size: 12px;
+                    background-color: #0B2A5E;
+                    border: 2px solid #1C3778;
+                    border-radius: 4px;
+                }
+                li:hover {
+                    background-color:#0F223F;
+                    
+                }
+                li:hover a {
+                    color: red;
+                }
+            }
+        }
+        .alert-today {//今日报警
+            &__list {
+                color: #9BC6D5;
+                font-size: 12px;
+            }
+            &__item {
+                padding: 4px;
+                border-bottom: 1px solid #9BC6D5;
+                &:last-child {
+                    border-bottom: 0;
+                }
+                &__title {
+                    font-size: 14px;
+                    color: #fff;
+                }
+            }
+        }  
+        
+        .related-equ {//设备监控---相关设备
+            padding: 0;
+            &__content {
+                ul {
+                    li {
+                        &:nth-child(1) {
+                            .icon-circle__graph {
+                                .icon-circle-icon1;
+                            }                            
+                        }
+                        &:nth-child(1):hover {
+                            .icon-circle__graph {
+                                .icon-circle-icon1-act;
+                            }
+                            .icon-circle__title {
+                                color: red;
+                            }                            
+                        }
+                        &:nth-child(2) {
+                            .icon-circle__graph {
+                                .icon-circle-icon2;
+                            }                            
+                        }
+                        &:nth-child(2):hover {
+                            .icon-circle__graph {
+                                .icon-circle-icon2-act;
+                            }
+                            .icon-circle__title {
+                                color: red;
+                            }                            
+                        }
+                        &:nth-child(3) {
+                            .icon-circle__graph {
+                                .icon-circle-icon3;
+                            }                            
+                        }
+                        &:nth-child(3):hover {
+                            .icon-circle__graph {
+                                .icon-circle-icon3-act;
+                            }
+                            .icon-circle__title {
+                                color: red;
+                            }                            
+                        }
+                        &:nth-child(4) {
+                            .icon-circle__graph {
+                                .icon-circle-icon4;
+                            }                            
+                        }
+                        &:nth-child(4):hover {
+                            .icon-circle__graph {
+                                .icon-circle-icon4-act;
+                            }
+                            .icon-circle__title {
+                                color: red;
+                            }                            
+                        }
+                        &:nth-child(5) {
+                            .icon-circle__graph {
+                                .icon-circle-icon5;
+                            }                            
+                        }
+                        &:nth-child(5):hover {
+                            .icon-circle__graph {
+                                .icon-circle-icon5-act;
+                            }
+                            .icon-circle__title {
+                                color: red;
+                            }                            
+                        }
+                        &:nth-child(6) {
+                            .icon-circle__graph {
+                                .icon-circle-icon6;
+                            }                            
+                        }
+                        &:nth-child(6):hover {
+                            .icon-circle__graph {
+                                .icon-circle-icon6-act;
+                            }
+                            .icon-circle__title {
+                                color: red;
+                            }                            
+                        }
+                    }
+                }
+            }
+        }
+        .device-data {//设备监控---设备数据展示
+            &__content {
+                &__list {
+                    li {
+                        span {
+                            &:last-child {
+                                color: #fff;
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                }
+            }
 
-//劳务管理页面
-.content {
-    &__center {
-        .realTime-avatar,
-        .register-avatar {
-            height: 320px;
         }
-        .realTime-avatar {
-            width: 480px;           
-            background-color: #999;
-        }
-        .register-avatar {
-            width: 218px;
-            background-color: #999;
-        }
-    }
-}
-//环境监测页面
-.content {
-    height: 600px;
-    &__wrapper {
-        display: flex;
-        height: 100%;
-        &__left {
-            flex: 1;
-        }
-        &__right {
-            flex: 4;
-            margin-left: 20px;
-        }
-    }
-}
 
+        .realtime-monitor { //环境监测---实时监控
+            &__content {
+                ul {
+                    li {
+                        &:first-child{
+                            margin-top: 0;
+                        }
+                        margin-top: 20px;
+                    }
+                }
+                &__radar {
+                    width: 200px;
+                    height: 200px;
+                    border: 1px solid yellow;
+                }
+            }
+        }
+
+        .labor-worker { //劳务---人员
+            ul {
+                li {
+                    margin-bottom: 10px;
+                    line-height: 40px;
+                    span:last-child {
+                        line-height: 40px;
+                    }
+                }
+            }
+        }
+
+        .labor-face {//劳务---人脸识别
+            .realTime-avatar,
+            .register-avatar {
+                height: 320px;
+                overflow: hidden;
+            }
+            .realTime-avatar {
+                width: 480px;           
+            }
+            .register-avatar {
+                width: 218px;
+            }
+        }
+
+    }    
+}
 
  /* 自定义组件样式
    ========================================================================== */  
@@ -443,13 +568,10 @@ body {
         color: #fff;
         line-height: 32px;
         &__title {
-
             font-size: 14px;
             font-weight: 800;
-
         }
         &__text-right {
-
             font-size: 14px;
             font-weight: 500;
             float: right;
@@ -458,7 +580,6 @@ body {
             font-size: 24px;
             font-weight: 700;
             text-align: center;
-
             .title-right {
                 margin-left: 35px;
                 color: #85F58F;
@@ -476,7 +597,6 @@ body {
 
 //icon-text组件
 .icon-text {
-    // color: #fff;
     color: @text-main;
     &::before {
         content: "";
@@ -495,18 +615,22 @@ body {
     }
 }
 
-//icon-box组件
+//icon-circle组件
 .icon-circle {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 90px;
-    height: 90px;
+    height: 100px;
+    cursor: pointer;
     &__graph {
-        width: 50px;
-        height: 50px;
-        background-color: #999;
+        width: 60px;
+        height: 60px;
+        background-color: #0B2A5E;
         border-radius: 50%;
+        border: 2px solid #1C3778;
+        background-repeat: no-repeat;
+        background-position: center center;
     }
     &__title {
         font-size: 12px;
@@ -518,7 +642,8 @@ body {
 //table-info组件
 .table-info {
     width: 100%;
-    tr {       
+    tr {  
+        line-height: 24px;     
         td {
             vertical-align: middle;
             &:first-child {
@@ -537,21 +662,29 @@ body {
         td {
             vertical-align: middle;
             &:first-child {
+                width: 80px;
                 text-align: left;
             }
             &:nth-child(2) {
-                display:inline-block;
-                width: 80px;
-                height:4px;
-                background-color: yellow; 
-                border-radius: 10px;
+                position: relative;
+                flex: 1;
+                height:4px;          
+                span {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    height: 100%;
+                    border-radius: 15px;
+                }               
             }
             &:last-child {
+                width: 60px;
                 text-align: right;
             }
         }
     }
 }
+
 //table-list组件
     .table-list {   
         width: 100%;       
@@ -618,6 +751,10 @@ body {
     .clear-fix;
 }
 
+.fonsize-12 {
+    font-size: 12px;
+}
+
  /* 重置盒子自定义样式
    ========================================================================== */  
 .inline-block {
@@ -650,6 +787,25 @@ body {
 .padding-0 {
     padding: 0;
 }
+
+.td-bgcolor-1 {
+    background-color: #51AEE0;
+}
+.td-bgcolor-2 {
+    background-color: #F3BB23;
+}
+.td-bgcolor-3 {
+    background-color: #DC6AA8;
+}
+.td-bgcolor-4 {
+    background-color: #85F58F;
+}
+.td-bgcolor-5 {
+    background: linear-gradient(#385EAA,#523C94);;
+}
+.td-bgcolor-6 {
+    background-color: #E46262;
+}
  /* icon图标
    ========================================================================== */  
 
@@ -676,9 +832,10 @@ body {
     background-image:  url(../images/icon/icon_windspeed.png);
  }
  .icon-text-warn::before {
+     width: 10px;
+    height: 24px;
     background-image:  url(../images/icon/icon_warn.png);
  }
-
 
  .icon-text-env::before {
     background-image:  url(../images/icon/icon_env.png);
@@ -715,4 +872,20 @@ body {
  }
  .icon-text-watermeter-active::before {
     background-image:  url(../images/icon/icon_watermeter_active.png);
+ }
+
+ .icon-text-user1::before {
+    background-image:  url(../images/icon/icon_user1.png);
+ }
+ .icon-text-user2::before {
+    background-image:  url(../images/icon/icon_user2.png);
+ }
+ .icon-text-user3::before {
+    background-image:  url(../images/icon/icon_user3.png);
+ }
+ .icon-text-user4::before {
+    background-image:  url(../images/icon/icon_user4.png);
+ }
+ .icon-text-user5::before {
+    background-image:  url(../images/icon/icon_user5.png);
  }

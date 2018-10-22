@@ -1,5 +1,8 @@
 /*** color(字体颜色、背景色)
 ******************/
+.text-shadow-white {
+  text-shadow: 0 1px yellow;
+}
 /**
  * 清除默认样式
  */
@@ -16,8 +19,7 @@ ul {
  *整体布局
  */
 html,
-body,
-.page-body {
+body {
   width: 100%;
   height: 100%;
   font-size: 14px;
@@ -214,13 +216,12 @@ body {
 }
 .page-body .content__wrapper {
   display: flex;
-  height: 100%;
 }
 .page-body .content__wrapper__left {
-  flex: 4;
+  flex: 1;
 }
 .page-body .content__wrapper__right {
-  flex: 1;
+  flex: 4;
 }
 .page-body .content .content__left,
 .page-body .content .content__center,
@@ -238,51 +239,51 @@ body {
   flex: 1;
   margin-left: 20px;
 }
-.content__engineer .card__content ul {
+.page-body .content__engineer .card__content ul {
   color: #fff;
   font-size: 12px;
 }
-.content__engineer .card__content ul li {
+.page-body .content__engineer .card__content ul li {
   line-height: 32px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-.content__engineer .card__content ul li span {
+.page-body .content__engineer .card__content ul li span {
   margin-left: 10px;
 }
-.content__env .box-card__content {
+.page-body .content__env .box-card__content {
   font-size: 12px;
 }
-.content__labor .box-card__content {
+.page-body .content__labor .box-card__content {
   color: #fff;
   font-size: 12px;
 }
-.content__labor .box-card__content .labor-icon_peoplenumber {
+.page-body .content__labor .box-card__content .labor-icon_peoplenumber {
   width: 40px;
   height: 27px;
   background: url(../images/icon/icon_peoplenumber.png) no-repeat center center;
 }
-.content__labor .box-card__content .labor-icon_labor {
+.page-body .content__labor .box-card__content .labor-icon_labor {
   width: 23px;
   height: 30px;
   background: url(../images/icon/icon_labor.png) no-repeat;
 }
-.content__labor .box-card__content .labor-icon_manager {
+.page-body .content__labor .box-card__content .labor-icon_manager {
   width: 25px;
   height: 27px;
   background: url(../images/icon/icon_manager.png) no-repeat;
 }
-.content__pro-draw__img {
+.page-body .content__pro-draw__img {
   width: 100%;
   overflow: hidden;
 }
-.content__pro-draw__img img {
+.page-body .content__pro-draw__img img {
   width: 100%;
   height: auto;
   max-height: 500px;
 }
-.content__monitor-equ .monitor-equ__list li {
+.page-body .content__monitor-equ .monitor-equ__list li {
   padding: 4px 20px;
   margin-bottom: 4px;
   font-size: 12px;
@@ -290,34 +291,116 @@ body {
   border: 2px solid #1C3778;
   border-radius: 4px;
 }
-.content__monitor-equ .monitor-equ__list li:hover {
+.page-body .content__monitor-equ .monitor-equ__list li:hover {
   background-color: #0F223F;
 }
-.content__center .realTime-avatar,
-.content__center .register-avatar {
+.page-body .content__monitor-equ .monitor-equ__list li:hover a {
+  color: red;
+}
+.page-body .content .alert-today__list {
+  color: #9BC6D5;
+  font-size: 12px;
+}
+.page-body .content .alert-today__item {
+  padding: 4px;
+  border-bottom: 1px solid #9BC6D5;
+}
+.page-body .content .alert-today__item:last-child {
+  border-bottom: 0;
+}
+.page-body .content .alert-today__item__title {
+  font-size: 14px;
+  color: #fff;
+}
+.page-body .content .related-equ {
+  padding: 0;
+}
+.page-body .content .related-equ__content ul li:nth-child(1) .icon-circle__graph {
+  background-image: url(../images/icon/icon_cir1.png);
+}
+.page-body .content .related-equ__content ul li:nth-child(1):hover .icon-circle__graph {
+  background-image: url(../images/icon/icon_cir1_act.png);
+}
+.page-body .content .related-equ__content ul li:nth-child(1):hover .icon-circle__title {
+  color: red;
+}
+.page-body .content .related-equ__content ul li:nth-child(2) .icon-circle__graph {
+  background-image: url(../images/icon/icon_cir2.png);
+}
+.page-body .content .related-equ__content ul li:nth-child(2):hover .icon-circle__graph {
+  background-image: url(../images/icon/icon_cir2_act.png);
+}
+.page-body .content .related-equ__content ul li:nth-child(2):hover .icon-circle__title {
+  color: red;
+}
+.page-body .content .related-equ__content ul li:nth-child(3) .icon-circle__graph {
+  background-image: url(../images/icon/icon_cir3.png);
+}
+.page-body .content .related-equ__content ul li:nth-child(3):hover .icon-circle__graph {
+  background-image: url(../images/icon/icon_cir3_act.png);
+}
+.page-body .content .related-equ__content ul li:nth-child(3):hover .icon-circle__title {
+  color: red;
+}
+.page-body .content .related-equ__content ul li:nth-child(4) .icon-circle__graph {
+  background-image: url(../images/icon/icon_cir4.png);
+}
+.page-body .content .related-equ__content ul li:nth-child(4):hover .icon-circle__graph {
+  background-image: url(../images/icon/icon_cir4_act.png);
+}
+.page-body .content .related-equ__content ul li:nth-child(4):hover .icon-circle__title {
+  color: red;
+}
+.page-body .content .related-equ__content ul li:nth-child(5) .icon-circle__graph {
+  background-image: url(../images/icon/icon_cir5.png);
+}
+.page-body .content .related-equ__content ul li:nth-child(5):hover .icon-circle__graph {
+  background-image: url(../images/icon/icon_cir5_act.png);
+}
+.page-body .content .related-equ__content ul li:nth-child(5):hover .icon-circle__title {
+  color: red;
+}
+.page-body .content .related-equ__content ul li:nth-child(6) .icon-circle__graph {
+  background-image: url(../images/icon/icon_cir6.png);
+}
+.page-body .content .related-equ__content ul li:nth-child(6):hover .icon-circle__graph {
+  background-image: url(../images/icon/icon_cir6_act.png);
+}
+.page-body .content .related-equ__content ul li:nth-child(6):hover .icon-circle__title {
+  color: red;
+}
+.page-body .content .device-data__content__list li span:last-child {
+  color: #fff;
+  font-size: 12px;
+}
+.page-body .content .realtime-monitor__content ul li {
+  margin-top: 20px;
+}
+.page-body .content .realtime-monitor__content ul li:first-child {
+  margin-top: 0;
+}
+.page-body .content .realtime-monitor__content__radar {
+  width: 200px;
+  height: 200px;
+  border: 1px solid yellow;
+}
+.page-body .content .labor-worker ul li {
+  margin-bottom: 10px;
+  line-height: 40px;
+}
+.page-body .content .labor-worker ul li span:last-child {
+  line-height: 40px;
+}
+.page-body .content .labor-face .realTime-avatar,
+.page-body .content .labor-face .register-avatar {
   height: 320px;
+  overflow: hidden;
 }
-.content__center .realTime-avatar {
+.page-body .content .labor-face .realTime-avatar {
   width: 480px;
-  background-color: #999;
 }
-.content__center .register-avatar {
+.page-body .content .labor-face .register-avatar {
   width: 218px;
-  background-color: #999;
-}
-.content {
-  height: 600px;
-}
-.content__wrapper {
-  display: flex;
-  height: 100%;
-}
-.content__wrapper__left {
-  flex: 1;
-}
-.content__wrapper__right {
-  flex: 4;
-  margin-left: 20px;
 }
 /* 自定义组件样式
    ========================================================================== */
@@ -454,13 +537,17 @@ body {
   flex-direction: column;
   align-items: center;
   width: 90px;
-  height: 90px;
+  height: 100px;
+  cursor: pointer;
 }
 .icon-circle__graph {
-  width: 50px;
-  height: 50px;
-  background-color: #999;
+  width: 60px;
+  height: 60px;
+  background-color: #0B2A5E;
   border-radius: 50%;
+  border: 2px solid #1C3778;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 .icon-circle__title {
   font-size: 12px;
@@ -469,6 +556,9 @@ body {
 }
 .table-info {
   width: 100%;
+}
+.table-info tr {
+  line-height: 24px;
 }
 .table-info tr td {
   vertical-align: middle;
@@ -489,16 +579,23 @@ body {
   vertical-align: middle;
 }
 .table-info .three-column td:first-child {
+  width: 80px;
   text-align: left;
 }
 .table-info .three-column td:nth-child(2) {
-  display: inline-block;
-  width: 80px;
+  position: relative;
+  flex: 1;
   height: 4px;
-  background-color: yellow;
-  border-radius: 10px;
+}
+.table-info .three-column td:nth-child(2) span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  border-radius: 15px;
 }
 .table-info .three-column td:last-child {
+  width: 60px;
   text-align: right;
 }
 .table-list {
@@ -566,6 +663,9 @@ body {
   display: block;
   clear: both;
 }
+.fonsize-12 {
+  font-size: 12px;
+}
 /* 重置盒子自定义样式
    ========================================================================== */
 .inline-block {
@@ -598,6 +698,24 @@ body {
 .padding-0 {
   padding: 0;
 }
+.td-bgcolor-1 {
+  background-color: #51AEE0;
+}
+.td-bgcolor-2 {
+  background-color: #F3BB23;
+}
+.td-bgcolor-3 {
+  background-color: #DC6AA8;
+}
+.td-bgcolor-4 {
+  background-color: #85F58F;
+}
+.td-bgcolor-5 {
+  background: linear-gradient(#385EAA, #523C94);
+}
+.td-bgcolor-6 {
+  background-color: #E46262;
+}
 /* icon图标
    ========================================================================== */
 .icon-text-pm25::before {
@@ -623,6 +741,8 @@ body {
   background-image: url(../images/icon/icon_windspeed.png);
 }
 .icon-text-warn::before {
+  width: 10px;
+  height: 24px;
   background-image: url(../images/icon/icon_warn.png);
 }
 .icon-text-env::before {
@@ -660,4 +780,19 @@ body {
 }
 .icon-text-watermeter-active::before {
   background-image: url(../images/icon/icon_watermeter_active.png);
+}
+.icon-text-user1::before {
+  background-image: url(../images/icon/icon_user1.png);
+}
+.icon-text-user2::before {
+  background-image: url(../images/icon/icon_user2.png);
+}
+.icon-text-user3::before {
+  background-image: url(../images/icon/icon_user3.png);
+}
+.icon-text-user4::before {
+  background-image: url(../images/icon/icon_user4.png);
+}
+.icon-text-user5::before {
+  background-image: url(../images/icon/icon_user5.png);
 }
