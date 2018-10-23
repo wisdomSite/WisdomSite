@@ -7,7 +7,7 @@
     <title>智慧工地-项目概况</title>
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/global.css">
-   
+    <link rel="stylesheet" href="./css/swiper.min.css">
 </head>
 <body>
     <div class="page-body">
@@ -113,14 +113,49 @@
                         </div>
                     </div>
                 </div>
-                <div class="content__center">
-                    <div class="banner" style="width:100%;height:460px;background:#999;"></div>
-                    <div class="card margin-top-40">
+                <div class="content__center" style="overflow:hidden;">
+                    <div class="swiper__wrapper">
+                        <div class="swiper-container" id="swiper-project">
+                            <div class="swiper__topbar">
+                                <div style="position: relative;">
+                                    <span>轮播</span>
+                                    <!-- <div class="switch-btn">
+                                        <input type="checkbox" id="autoplay-btn" class="switch-btn__checkbox">
+                                        <label for="autoplay-btn" class="switch-btn__label">
+                                            <span class="switch-btn__text" data-on ="on" data- = "off"></span>
+                                            <span class="switch-btn__radius"></span>
+                                        </label>                                                            
+                                    </div> -->
+                                </div>
+                                <span class="margin-left-40">全景图片</span>
+                                <div>2018-05-24</div>
+                            </div>
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide slide1"><img src="./images/swiper1.png" alt=""></div>
+                                    <div class="swiper-slide slide2"><img src="./images/swiper2.png" alt=""></div>
+                                    <div class="swiper-slide slide3"><img src="./images/project _drawing.png" alt=""></div>
+                                </div>
+                                <!-- 分页器 -->
+                                <div class="swiper-pagination"></div>                       
+                                <!-- 导航按钮 -->
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-button-next"></div>                       
+                                <!-- 滚动条 -->
+                                <div class="swiper-scrollbar"></div>
+                        </div>
+                    </div>
+                    <div class="card margin-top-40 project-progress">
                         <div class="card__top-title">工程进度</div>                     
                         <div class="card__header">
                             <span class="card__header__title">工程进度</span>
                         </div>
-                        <div class="card__content"></div>
+                        <div class="card__content">
+                            <ul class="time-zone">
+                                <li class="time-zone-">
+
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <div class="content__right">
@@ -167,7 +202,26 @@
             </div> 
         </div>
     </div>
-    <script src="./js/echarts.min.js"></script>
-    <script src="./js/setEchart.js"></script>
+    <script src="./js/swiper.min.js"></script>
+    <!-- <script src="./js/echarts.min.js"></script>
+    <script src="./js/setEchart.js"></script> -->
+    <script src="./js/setSwiper.js"></script>
+    <script>
+    //      let btnSwitch = document.getElementsByClassName('btn-switch-anim')[0]
+    //      let switchCheckbox = document.getElementsByClassName('switch-checkbox')[0]
+    //     btnSwitch.addEventListener('click',checkNum)
+        
+    // function checkNum(){
+    //     console.log(switchCheckbox['checked'])
+    //     if(switchCheckbox.checked){
+    //         console.log("选中");
+    //         switchCheckbox.checked = false
+    //         console.log(switchCheckbox.checked)
+    //     }else{
+    //         console.log("没选中");
+    //     }
+    // }
+
+    </script>
 </body>
 </html>

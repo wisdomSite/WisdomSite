@@ -223,19 +223,19 @@ body {
 .page-body .content__wrapper__right {
   flex: 4;
 }
-.page-body .content .content__left,
-.page-body .content .content__center,
-.page-body .content .content__right {
+.page-body .content__left,
+.page-body .content__center,
+.page-body .content__right {
   height: 100%;
 }
-.page-body .content .content__left {
+.page-body .content__left {
   flex: 1;
 }
-.page-body .content .content__center {
+.page-body .content__center {
   flex: 3;
   margin-left: 20px;
 }
-.page-body .content .content__right {
+.page-body .content__right {
   flex: 1;
   margin-left: 20px;
 }
@@ -251,6 +251,10 @@ body {
 }
 .page-body .content__engineer .card__content ul li span {
   margin-left: 10px;
+}
+.page-body .content .project-progress {
+  background-image: url(../images/bg_map.png);
+  background-repeat: no-repeat;
 }
 .page-body .content__env .box-card__content {
   font-size: 12px;
@@ -479,12 +483,54 @@ body {
   flex: 1;
   padding: 10px 15px 15px 0;
 }
+.swiper-card {
+  position: relative;
+  padding: 20px 16px;
+  width: 100%;
+  border-radius: 4px;
+  background: rgba(131, 203, 228, 0.2);
+  box-sizing: border-box;
+}
+.swiper-card__top-title {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  max-width: 180px;
+  height: 32px;
+  line-height: 32px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 4px;
+  background-color: #4891BE;
+  transform: translate3d(-50%, -50%, 0);
+  z-index: 10;
+}
 .box-card {
+  position: relative;
   box-sizing: border-box;
   padding-bottom: 10px;
 }
 .box-card:last-child {
   border-bottom: none;
+}
+.box-card__top-title {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  max-width: 180px;
+  height: 32px;
+  line-height: 32px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 4px;
+  background-color: #4891BE;
+  transform: translate3d(-50%, -50%, 0);
 }
 .box-card__header {
   padding: 20px 0;
@@ -622,6 +668,81 @@ body {
   margin-bottom: 20px;
   background: linear-gradient(90deg, #011832 0%, #10486E 50%, #011832 100%);
 }
+.switch-btn {
+  position: absolute;
+  right: 0;
+  width: 90px;
+  height: 40px;
+  margin: 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+.switch-btn__checkbox {
+  display: none;
+}
+.switch-btn__label {
+  display: block;
+  border: 2px solid #999;
+  cursor: pointer;
+}
+.switch-btn__text {
+  display: block;
+  width: 200%;
+  margin-left: -100%;
+  transition: margin 0.3s ease-in 0s;
+}
+.switch-btn__text::before,
+.switch-btn__text::after {
+  display: block;
+  float: right;
+  width: 50%;
+  height: 30px;
+  padding: 0;
+  line-height: 30px;
+  font-size: 14px;
+  color: white;
+  font-family: Trebuchet, Arial, sans-serif;
+  font-weight: bold;
+  box-sizing: border-box;
+}
+.switch-btn__text::after {
+  content: attr(data-on);
+  padding-left: 10px;
+  background-color: #00e500;
+  color: #FFFFFF;
+}
+.switch-btn__text::before {
+  content: attr(data-off);
+  padding-right: 10px;
+  background-color: #EEEEEE;
+  color: #999999;
+  text-align: right;
+}
+.switch-btn__radius {
+  position: absolute;
+  display: block;
+  width: 22px;
+  height: 22px;
+  margin: 4px;
+  background: #FFFFFF;
+  top: 0;
+  bottom: 0;
+  right: 56px;
+  border: 2px solid #999999;
+  border-radius: 20px;
+  transition: all 0.3s ease-in 0s;
+}
+.switch-btn__radius .switch-btn__checkbox:checked + .switch-btn__label .switch-btn__text {
+  margin-left: 0;
+}
+.switch-btn__radius .switch-btn__checkbox:checked + .switch-btn__label .switch-btn__radius {
+  right: 0px;
+}
+.time-zone {
+  height: 100px;
+  border: 1px solid red;
+}
 /* 封装原始组合样式
    ========================================================================== */
 .flex-between {
@@ -676,6 +797,9 @@ body {
 }
 .margin-left-20 {
   margin-left: 20px;
+}
+.margin-left-40 {
+  margin-left: 40px;
 }
 .margin-left-80 {
   margin-left: 80px;
@@ -795,4 +919,87 @@ body {
 }
 .icon-text-user5::before {
   background-image: url(../images/icon/icon_user5.png);
+}
+/* swiper
+   ========================================================================== */
+#swiper-project {
+  width: 100%;
+  height: 400px;
+}
+#swiper-project .swiper-button-prev,
+#swiper-project .swiper-button-next {
+  background: rgba(0, 0, 0, 0.4);
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+#swiper-project .swiper-button-next {
+  background-image: url(../images/icon/swiper_btn_next.png);
+}
+#swiper-project .swiper-button-prev {
+  background-image: url(../images/icon/swiper_btn_prev.png);
+}
+#swiper-project .swiper__topbar {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0 20px;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.4);
+  box-sizing: border-box;
+  z-index: 10;
+}
+#swiper-security {
+  width: 100%;
+  height: 400px;
+  border: 1px solid red;
+}
+#swiper-security .swiper-button-prev,
+#swiper-security .swiper-button-next {
+  background: rgba(0, 0, 0, 0.4);
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+#swiper-security .swiper-button-next {
+  background-image: url(../images/icon/swiper_next1.png);
+}
+#swiper-security .swiper-button-prev {
+  background-image: url(../images/icon/swiper_prev1.png);
+}
+#swiper-security .swiper-slide {
+  width: 210px;
+  height: 140px;
+  border: 1px solid yellow;
+}
+#swiper-security .swiper-slide img {
+  width: 100%;
+  height: auto;
+}
+.swiper__wrapper {
+  width: 100%;
+  height: 400px;
+}
+.swiper-container .swiper-wrapper .swiper-slide img {
+  width: 100%;
+  height: auto;
+}
+.swiper1 {
+  width: 100%;
+  height: 400px;
+}
+.swiper1 .swiper-button-prev,
+.swiper1 .swiper-button-next {
+  background: rgba(0, 0, 0, 0.4);
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.swiper1 .swiper-button-next {
+  background-image: url(../images/icon/swiper_btn_next.png);
+}
+.swiper1 .swiper-button-prev {
+  background-image: url(../images/icon/swiper_btn_prev.png);
 }

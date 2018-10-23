@@ -221,17 +221,18 @@ body {
                 flex: 4;
             }
         }
-        .content__left,
-        .content__center,
-        .content__right {
+        &__left,
+        &__center,
+        &__right {
             height: 100%;
+            
         }
-        .content__left {flex: 1;}
-        .content__center {
+        &__left {flex: 1;}
+        &__center {
             flex: 3;
             margin-left: 20px;
         }
-        .content__right {
+        &__right {
             flex: 1;
             margin-left: 20px;
         }
@@ -250,6 +251,10 @@ body {
                     }
                 }
             }
+        }
+        .project-progress {//工程进度
+            background-image: url(../images/bg_map.png);
+            background-repeat: no-repeat;
         }
         &__env {//环境监测
             .box-card__content {
@@ -485,6 +490,7 @@ body {
     border-radius: 4px;
     background: rgba(131, 203, 228, .2);
     box-sizing: border-box;
+
     &__header {
         font-weight: 700;
         font-size: 14px;
@@ -554,14 +560,57 @@ body {
         }
     }
 }
-
+//swiper-card组件
+.swiper-card {
+    position: relative;
+    padding: 20px 16px;
+    width: 100%;
+    border-radius: 4px;
+    background: rgba(131, 203, 228, .2);
+    box-sizing: border-box;
+    &__top-title {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 50%;
+        max-width: 180px;
+        height: 32px;
+        line-height: 32px;
+        color: #fff;
+        font-size: 14px;
+        font-weight: bold;
+        text-align: center;
+        border-radius: 4px;
+        background-color: #4891BE;
+        transform: translate3d(-50%,-50%,0);   
+        z-index: 10;
+         
+    }
+}
 //box-card组件
 .box-card {
+    position: relative;
     box-sizing: border-box;
     padding-bottom: 10px;
     &:last-child {
         border-bottom: none;
-    }   
+    } 
+    &__top-title {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 50%;
+        max-width: 180px;
+        height: 32px;
+        line-height: 32px;
+        color: #fff;
+        font-size: 14px;
+        font-weight: bold;
+        text-align: center;
+        border-radius: 4px;
+        background-color: #4891BE;
+        transform: translate3d(-50%,-50%,0);  
+    }  
     &__header {
         padding: 20px 0;
         width: 100%;
@@ -686,31 +735,115 @@ body {
 }
 
 //table-list组件
-    .table-list {   
-        width: 100%;       
-        tr {
-            display: flex;
-            align-items: center;
-            margin-top: 10px;
-            padding:1px 8px; 
-            font-size: 12px;
-            color: #fff;
-            text-align: center;
-            background: rgba(26,52,82,.6);            
-            th {
-                flex: 1;
-                padding: 10px 0;
-            }
-            td {
-                flex: 1;               
-            }
+.table-list {   
+    width: 100%;       
+    tr {
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+        padding:1px 8px; 
+        font-size: 12px;
+        color: #fff;
+        text-align: center;
+        background: rgba(26,52,82,.6);            
+        th {
+            flex: 1;
+            padding: 10px 0;
         }
-        .tr__th {
-            margin-bottom: 20px;
-            background: linear-gradient(90deg,#011832 0%,#10486E 50%,#011832 100%);
+        td {
+            flex: 1;               
+        }
+    }
+    .tr__th {
+        margin-bottom: 20px;
+        background: linear-gradient(90deg,#011832 0%,#10486E 50%,#011832 100%);
+    }
+
+}
+//btn-switch组件
+.switch-btn {
+    position: absolute;
+    // float: left;
+    right: 0;
+    // top: 50%;
+    width: 90px;
+    height: 40px;
+    margin: 0;
+    -webkit-user-select:none; 
+    -moz-user-select:none; 
+    -ms-user-select: none; 
+    &__checkbox {
+        display: none;
+    }
+    &__label {
+        display: block;
+        // width: 100%;
+        // height: 100%;
+        border: 2px solid #999;
+        cursor: pointer;
+    }
+    &__text {
+        display: block; 
+        width: 200%; 
+        margin-left: -100%;
+        transition: margin 0.3s ease-in 0s;
+        &::before,
+        &::after {
+            display: block; 
+            float: right; 
+            width: 50%; 
+            height: 30px; 
+            padding: 0; 
+            line-height: 30px;
+            font-size: 14px; 
+            color: white; 
+            font-family: 
+            Trebuchet, Arial, sans-serif; 
+            font-weight: bold;
+            box-sizing: border-box;
+        }
+        &::after {
+            content: attr(data-on);
+            padding-left: 10px;
+            background-color: #00e500; 
+            color: #FFFFFF;
+        }
+         
+        &::before {
+            content: attr(data-off);
+            padding-right: 10px;
+            background-color: #EEEEEE; 
+            color: #999999;
+            text-align: right;
         }
 
     }
+    &__radius {
+            position: absolute; 
+            display: block; 
+            width: 22px;
+            height: 22px;
+            margin: 4px;
+            background: #FFFFFF;
+            top: 0; 
+            bottom: 0;
+            right: 56px;
+            border: 2px solid #999999; 
+            border-radius: 20px;
+            transition: all 0.3s ease-in 0s;       
+            .switch-btn__checkbox:checked + .switch-btn__label .switch-btn__text {
+                margin-left: 0;
+            }        
+            .switch-btn__checkbox:checked + .switch-btn__label .switch-btn__radius {
+                right: 0px;    
+            }
+    }
+}
+//time-zone组件
+.time-zone {
+    height: 100px;
+    border: 1px solid red;
+}
 
  /* 封装原始组合样式
    ========================================================================== */  
@@ -765,6 +898,9 @@ body {
 }
 .margin-left-20 {
     margin-left: 20px;
+}
+.margin-left-40 {
+    margin-left: 40px;
 }
 .margin-left-80 {
     margin-left: 80px;
@@ -889,3 +1025,97 @@ body {
  .icon-text-user5::before {
     background-image:  url(../images/icon/icon_user5.png);
  }
+ /* swiper
+   ========================================================================== */ 
+   #swiper-project{
+        width: 100%;
+        height: 400px;
+        .swiper-button-prev,
+        .swiper-button-next{
+            background: rgba(0,0,0,.4);
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+        .swiper-button-next {
+            background-image: url(../images/icon/swiper_btn_next.png);
+        }
+        .swiper-button-prev {
+            background-image: url(../images/icon/swiper_btn_prev.png);
+        }
+        .swiper__topbar {
+            display: flex;
+            justify-content: space-between;
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 0 20px;           
+            width: 100%;
+            height: 40px;          
+            line-height: 40px;
+            color: #fff;
+            background: rgba(0,0,0,.4);
+            box-sizing: border-box;
+            z-index: 10;
+        }
+        
+   } 
+   #swiper-security {
+       width: 100%;
+       height: 400px;
+       border: 1px solid red;
+       .swiper-button-prev,
+       .swiper-button-next{
+           background: rgba(0,0,0,.4);
+           background-position: center center;
+           background-repeat: no-repeat;
+       }
+       .swiper-button-next {
+        background-image: url(../images/icon/swiper_next1.png);
+        }
+        .swiper-button-prev {
+            background-image: url(../images/icon/swiper_prev1.png);
+        }
+        .swiper-slide {
+            width: 210px;
+            height: 140px;
+            border: 1px solid yellow;
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+   }
+
+   .swiper__wrapper {
+    width: 100%;
+    height: 400px;
+    // overflow: hidden;
+   }
+   .swiper-container {
+    .swiper-wrapper {
+        .swiper-slide {
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+   }
+   .swiper1 {
+    width: 100%;
+    height: 400px;
+    .swiper-button-prev,
+    .swiper-button-next{
+        background: rgba(0,0,0,.4);
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+    .swiper-button-next {
+        background-image: url(../images/icon/swiper_btn_next.png);
+    }
+    .swiper-button-prev {
+        background-image: url(../images/icon/swiper_btn_prev.png);
+    }
+    
+   }
+   
