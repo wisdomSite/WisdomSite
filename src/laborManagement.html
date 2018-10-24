@@ -81,7 +81,13 @@
                         </div>
                     </div>
                     <div class="card margin-top-20">
-                        <div class="card__header card__header__center">
+                        <div class="card__header">
+                            <span class="card__header__title">工种</span>
+                        </div>
+                        <div class="card__content">
+                            <div class="" id="work-type-pie">
+
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -154,7 +160,10 @@
                     <div style="margin-top: 20px;">
                         <div class="card">
                             <div class="card__header">
-                               
+                               <span class="card__header__title">今日人力曲线</span>
+                            </div>
+                            <div class="card__content">
+                                <div id="human-brokenline" style="width:100%;height:200px;"></div>
                             </div>
                         </div>
                     </div>
@@ -294,5 +303,85 @@
     </div>
     <script src="./js/echarts.min.js"></script>
     <script src="./js/setEchart.js"></script>
+    <script>
+    let humanBrokenline = document.getElementById('human-brokenline')
+    let humanBrokenlineOpts = {
+        color: ['#F3BB22','#52A9DF'],
+        series: [
+            {
+            type: 'line',
+            name:'管理人员',
+            data:[10, 24, 20, 17, 12, 19,38],
+            },
+            {
+                type: 'line',
+                name:'劳务人员',
+                data:[29, 8, 20, 27, 29, 37],
+            }
+        ],
+        legend: {
+            data:['管理人员','劳务人员']
+        },
+        xAxis:  {
+            type: 'category',
+            boundaryGap: false,
+            data: ['00:00','02:00','04:00','06:00','08:00','10:00']
+        },
+        yAxis: {
+            type: 'value',
+            data: [0,20,30,40]
+        },
+        tooltip: {
+            trigger: 'axis'
+        },
+    }
+    setChart(humanBrokenline,humanBrokenlineOpts)
+
+    let workTypePie = document.getElementById('work-type-pie')
+    let workTypePieOpts = {
+        color: ['#0CBD5C','#E5C63D','#960453','#EA3636','#EB8504'],
+        series: [
+            {
+                type: 'pie',
+                name: '质量',
+                startAngle: 120,
+                radius: ['20%','40%'],
+                center: ['50%','25%'],
+                label: {
+                    show: true,
+                    color: '#fff',
+                    verticalAlign: 'middle'
+                },
+                data: [
+                    {value:120,name:'油漆工'},
+                    {value:210,name:'电焊工'},
+                    {value:140,name:'水泥工'},
+                    {value:60,name:'架子工'},
+                    {value:20,name:'机械工'}
+                ],
+                markPoint: {
+                    symbol: 'diamond'
+                }            
+            }
+
+        ],
+        tooltip: {
+            trigger: 'item',
+            formatter: '{b}：{d}%'
+        },
+        legend: {
+        x: 'left',
+        y:'50%',
+        orient: 'vertical',
+        formatter: '{name}',
+        textStyle: {
+            color: '#fff',
+            padding:[0,0,0,4]
+        }
+        
+    }
+    }
+    setChart(workTypePie,workTypeLineOpts)
+    </script>
 </body>
 </html>

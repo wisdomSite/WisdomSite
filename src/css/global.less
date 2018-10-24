@@ -432,7 +432,6 @@ body {
             }
 
         }
-
         .realtime-monitor { //环境监测---实时监控
             &__content {
                 ul {
@@ -447,6 +446,31 @@ body {
                     width: 200px;
                     height: 200px;
                     border: 1px solid yellow;
+                }
+            }
+            .text-strip__wrapper {
+                margin: 40px 0 20px 0;
+                height: 100px;
+                justify-content: space-around;
+                &__city {
+                    font-size: 18px;
+                    .pollution-index {
+                        margin: 0 10px;
+                        font-size: 24px;
+                        color: #80EB8B;
+                    }
+                }
+                .text-strip{
+                    span {
+                        &:first-child {
+                            border-top-left-radius: 4px;
+                            border-bottom-left-radius: 4px;
+                        }
+                        &:last-child {
+                            border-top-right-radius: 4px;
+                            border-bottom-right-radius: 4px;
+                        }
+                    }
                 }
             }
         }
@@ -476,6 +500,7 @@ body {
                 width: 218px;
             }
         }
+ 
 
     }    
 }
@@ -844,6 +869,54 @@ body {
     height: 100px;
     border: 1px solid red;
 }
+//text-strip组件
+.text-strip { 
+    width: 490px;
+    height: 30px;
+    display: flex;
+    border-radius: 10px;
+    span {
+        position: relative;
+        flex: 1;
+        font-size: 12PX;
+        color: #fff;
+        text-align: center;
+        line-height: 30px;
+        &::after {
+            content: attr(data-text);
+            display: block;
+            position: absolute;
+            bottom: -30px;
+            right: -10px;
+        }
+        &:nth-child(1) {
+            background-color: #0CBD5C;
+            &::before {
+                content: attr(data-text1);
+                display: block;
+                position: absolute;
+                bottom: -30px;
+                left: 0px;
+            }
+        }
+        &:nth-child(2) {
+            background-color: #E5C63D;
+        }
+        &:nth-child(3) {
+            background-color: #EB8504;
+        }
+        &:nth-child(4) {
+            background-color: #EA3636;
+        }
+        &:nth-child(5) {
+            background-color: #960453;
+        }
+        &:nth-child(6) {
+            background-color: #61001D;
+        }
+    }
+}
+//
 
  /* 封装原始组合样式
    ========================================================================== */  
@@ -1118,4 +1191,20 @@ body {
     }
     
    }
+//===============================echart
+#work-type-pie {//工种饼图
+    width: 100%;
+    height: 400px;
+    // border: 1px solid red;
+}  
+#problem-distr-pie  {//问题分布饼图
+    width: 100%;
+    height: 300px;
+    // border: 1px solid red;
+}
+#check-pie {//检查累计饼图
+    width: 100%;
+    height: 300px;
+    // border: 1px solid red;
+}
    

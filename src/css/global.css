@@ -388,6 +388,27 @@ body {
   height: 200px;
   border: 1px solid yellow;
 }
+.page-body .content .realtime-monitor .text-strip__wrapper {
+  margin: 40px 0 20px 0;
+  height: 100px;
+  justify-content: space-around;
+}
+.page-body .content .realtime-monitor .text-strip__wrapper__city {
+  font-size: 18px;
+}
+.page-body .content .realtime-monitor .text-strip__wrapper__city .pollution-index {
+  margin: 0 10px;
+  font-size: 24px;
+  color: #80EB8B;
+}
+.page-body .content .realtime-monitor .text-strip__wrapper .text-strip span:first-child {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.page-body .content .realtime-monitor .text-strip__wrapper .text-strip span:last-child {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
 .page-body .content .labor-worker ul li {
   margin-bottom: 10px;
   line-height: 40px;
@@ -743,6 +764,52 @@ body {
   height: 100px;
   border: 1px solid red;
 }
+.text-strip {
+  width: 490px;
+  height: 30px;
+  display: flex;
+  border-radius: 10px;
+}
+.text-strip span {
+  position: relative;
+  flex: 1;
+  font-size: 12PX;
+  color: #fff;
+  text-align: center;
+  line-height: 30px;
+}
+.text-strip span::after {
+  content: attr(data-text);
+  display: block;
+  position: absolute;
+  bottom: -30px;
+  right: -10px;
+}
+.text-strip span:nth-child(1) {
+  background-color: #0CBD5C;
+}
+.text-strip span:nth-child(1)::before {
+  content: attr(data-text1);
+  display: block;
+  position: absolute;
+  bottom: -30px;
+  left: 0px;
+}
+.text-strip span:nth-child(2) {
+  background-color: #E5C63D;
+}
+.text-strip span:nth-child(3) {
+  background-color: #EB8504;
+}
+.text-strip span:nth-child(4) {
+  background-color: #EA3636;
+}
+.text-strip span:nth-child(5) {
+  background-color: #960453;
+}
+.text-strip span:nth-child(6) {
+  background-color: #61001D;
+}
 /* 封装原始组合样式
    ========================================================================== */
 .flex-between {
@@ -1002,4 +1069,16 @@ body {
 }
 .swiper1 .swiper-button-prev {
   background-image: url(../images/icon/swiper_btn_prev.png);
+}
+#work-type-pie {
+  width: 100%;
+  height: 400px;
+}
+#problem-distr-pie {
+  width: 100%;
+  height: 300px;
+}
+#check-pie {
+  width: 100%;
+  height: 300px;
 }

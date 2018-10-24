@@ -133,6 +133,7 @@
                            <span>检查累计</span>
                         </div>
                         <div class="card__content">
+                            <div id="check-pie"></div>
                         </div>
                     </div>
                 </div>
@@ -200,7 +201,9 @@
                             <div class="box-card__header">
                                 <span class="box-card__header__title">问题分布</span>
                             </div>
-                            <div class="box-card__content"></div>
+                            <div class="box-card__content">
+                                <div id="problem-distr-pie"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -208,9 +211,99 @@
 
         </div>
     </div>
-    <!-- <script src="./js/echarts.min.js"></script>
-    <script src="./js/setEchart.js"></script> -->
+    <script src="./js/echarts.min.js"></script>
+    <script src="./js/setEchart.js"></script>
     <script src="./js/swiper.min.js"></script>
     <script src="./js/setSwiper.js"></script>
+    <script>
+   let problemDistrPie = document.getElementById('problem-distr-pie')
+    let problemDistrPieOpts = {
+        color: ['#0CBD5C','#EB8504','#E5C63D','#EA3636'],
+        series: [
+            {
+                type: 'pie',
+                name: '问题分布',
+                startAngle: 120,
+                radius: ['20%','40%'],
+                center: ['50%','25%'],
+                label: {
+                    show: true,
+                    color: '#fff',
+                    verticalAlign: 'middle'
+                },
+                data: [
+                    {value:120,name:'施工用电'},
+                    {value:210,name:'文明施工'},
+                    {value:140,name:'基坑工程'},
+                    {value:60,name:'安全管理'}
+                ]           
+            }
+
+        ],
+        tooltip: {
+            trigger: 'item',
+            formatter: '{b}：{d}%'
+        },
+        legend: {
+        x: 'left',
+        y:'50%',
+        orient: 'vertical',
+        formatter: '{name}',
+        textStyle: {
+            color: '#fff',
+            padding:[0,0,0,4]
+        }
+        
+    }
+    }
+    setChart(problemDistrPie,problemDistrPieOpts)
+
+      let checkPie = document.getElementById('check-pie')
+let checkPieOpts = {
+    color: ['#0CBD5C','#E5C63D'],
+    series: [
+        {
+            type: 'pie',
+            name: '检查累计',
+            startAngle: 120,
+            radius: ['40%','60%'],
+            center: ['34%','50%'],
+            label: {
+                show: true,
+                position: 'center',
+                // formatter: function() {
+                //  var html='整改率\r\n'+'85%';
+                //     return html;
+                // },
+                color: '#fff',
+                verticalAlign: 'middle'
+            },
+            data: [
+                {value:217,name:'已整改'},
+                {value:25,name:'整改中'}
+            ],
+            markPoint: {
+                symbol: 'diamond'
+            }            
+        }
+
+    ],
+    tooltip: {
+        trigger: 'item',
+        formatter: '{b}：{d}%'
+    },
+    legend: {
+        x: 'right',
+        y:'10%',
+        formatter: '{name} {value}',
+        textStyle: {
+            color: '#fff',
+            padding:[0,0,0,4]
+        }
+        
+    }
+}
+setChart(checkPie,checkPieOpts)
+    </script>
 </body>
 </html>

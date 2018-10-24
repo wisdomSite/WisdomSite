@@ -165,7 +165,15 @@
                             <div class="box-card__header">
                                 <span class="box-card__header__title">质量</span>
                             </div>
-                            <div class="box-card__content"></div>
+                            <div class="box-card__content">
+                                <div class="">
+                                    <div style="width:100%;height:120px;border: 1px solid red;" id="pie-chart"></div>
+                                    <div>
+                                        <p>检查总数 <span>261项</span> </p>
+                                        <p>合格 <span>26项</span></p>
+                                    </div>
+                               </div>
+                            </div>
                         </div>
                         <div class="box-card box-card__border">
                             <div class="box-card__header">
@@ -203,8 +211,8 @@
         </div>
     </div>
     <script src="./js/swiper.min.js"></script>
-    <!-- <script src="./js/echarts.min.js"></script>
-    <script src="./js/setEchart.js"></script> -->
+    <script src="./js/echarts.min.js"></script>
+    <script src="./js/setEchart.js"></script>
     <script src="./js/setSwiper.js"></script>
     <script>
     //      let btnSwitch = document.getElementsByClassName('btn-switch-anim')[0]
@@ -222,6 +230,82 @@
     //     }
     // }
 
+    </script>
+    <script>
+    let pieChart = document.getElementById('pie-chart')
+let opts1 = {
+    color: [
+        {
+            type: 'linear',
+            x: 0,
+            y: 0,
+            x2: 0,
+            y2: 1,
+            colorStops: [{
+                offset: 0, color: '#3D58A6' // 0% 处的颜色
+            }, {
+                offset: 1, color: '#523C95' // 100% 处的颜色
+            }],
+            globalCoord: false // 缺省为 false
+        },
+        {
+            type: 'linear',
+            x: 0,
+            y: 0,
+            x2: 0,
+            y2: 1,
+            colorStops: [{
+                offset: 0, color: '#F4C424' // 0% 处的颜色
+            }, {
+                offset: 1, color: '#EE8E1C' // 100% 处的颜色
+            }],
+            globalCoord: false // 缺省为 false
+        },
+
+    ],
+    series: [
+        {
+            type: 'pie',
+            name: '质量',
+            startAngle: 120,
+            radius: ['50%','70%'],
+            center: ['26%','50%'],
+            label: {
+                show: true,
+                position: 'center',
+                formatter: function() {
+                 var html='整改率\r\n'+'85%';
+                    return html;
+                },
+                color: '#fff',
+                verticalAlign: 'middle'
+            },
+            data: [
+                {value:217,name:'已整改'},
+                {value:25,name:'整改中'}
+            ],
+            markPoint: {
+                symbol: 'diamond'
+            }            
+        }
+
+    ],
+    tooltip: {
+        trigger: 'item',
+        formatter: '{b}：{d}%'
+    },
+    legend: {
+        x: 'right',
+        y:'10%',
+        formatter: '{name} {value}',
+        textStyle: {
+            color: '#fff',
+            padding:[0,0,0,4]
+        }
+        
+    }
+}
+setChart(pieChart,opts1)
     </script>
 </body>
 </html>
